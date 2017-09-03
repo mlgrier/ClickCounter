@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var count = 0
     var label:UILabel!
+    var secondLabel:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,15 @@ class ViewController: UIViewController {
         label.frame = CGRect.init(x: 150, y: 150, width: 60, height: 60)
         label.text = "0"
         self.view.addSubview(label)
-        
         self.label = label
+        
+        //2Label
+        let secondLabel = UILabel()
+        secondLabel.frame = CGRect.init(x: 150, y: 100, width: 60, height: 60)
+        secondLabel.text = "0"
+        self.view.addSubview(secondLabel)
+        self.secondLabel = secondLabel
+        
         
         //Button
         let button = UIButton()
@@ -38,6 +46,8 @@ class ViewController: UIViewController {
     func incrementCount() {
         self.count = self.count + 1
         self.label.text = "\(self.count)"
+        self.secondLabel.text = "\(self.count)"
+        
     }
 
     
