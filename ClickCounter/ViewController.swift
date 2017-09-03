@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var count = 0
+    var label:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,8 @@ class ViewController: UIViewController {
         label.text = "0"
         self.view.addSubview(label)
         
+        self.label = label
+        
         //Button
         let button = UIButton()
         button.frame = CGRect.init(x: 150, y: 250, width: 60, height: 60)
@@ -26,6 +31,13 @@ class ViewController: UIViewController {
         button.setTitleColor(UIColor.blue, for: .normal)
         self.view.addSubview(button)
         
+        button.addTarget(self, action: #selector(ViewController.incrementCount), for: UIControlEvents.touchUpInside)
+        
+    }
+    
+    func incrementCount() {
+        self.count = self.count + 1
+        self.label.text = "\(self.count)"
     }
 
     
